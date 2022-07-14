@@ -1,5 +1,5 @@
 name: Verify
-one: [push]
+on: [push]
 
 jobs:
   rubocop:
