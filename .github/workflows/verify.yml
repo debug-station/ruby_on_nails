@@ -1,0 +1,19 @@
+name: Verify
+one: [push]
+
+jobs:
+  rubocop:
+    name: Syntax check
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby and install gems
+        uses: ruby/step-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run check
+        run: |
+          bin/rubocop
